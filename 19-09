@@ -26,4 +26,17 @@ for i in range(len(matrix)):
             temp = [i, j, matrix[i][j]]
             sparseMatrix.append(temp)
 print(sparseMatrix)
+output
+Enter Number of rows3
+Enter columns3
+Enter Number in matrix0 0 1
+Enter Number in matrix0 1 1
+Enter Number in matrix0 2 2
+
+Enter Number in matrix1 0 
+6
+> 6
+6
+> > 8
+> 9
 
