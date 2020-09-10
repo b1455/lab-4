@@ -26,19 +26,6 @@ for i in range(len(matrix)):
             temp = [i, j, matrix[i][j]]
             sparseMatrix.append(temp)
 print(sparseMatrix)
-Output:
-
-
-
-Enter the number of rows:2
-Enter the number of columns:3
-Enter the entries rowwise:
-1
-2
-3
-4
-5
-6
 
 1 2 3 
 4 5 6 
