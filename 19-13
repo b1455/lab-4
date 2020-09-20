@@ -1,0 +1,40 @@
+#Performs all the five arithmetic operations
+#!/usr/bin/python
+
+A = 21
+B = 10
+C = 0
+
+C = a + b
+Print “Line 1 – Value of c is “, c
+
+C = a – b
+Print “Line 2 – Value of c is “, c 
+
+C = a * b
+Print “Line 3 – Value of c is “, c 
+
+C = a / b
+Print “Line 4 – Value of c is “, c 
+
+C = a % b
+Print “Line 5 – Value of c is “, c
+
+A = 2
+B = 3
+C = a**b 
+Print “Line 6 – Value of c is “, c
+
+A = 10
+B = 5
+C = a//b 
+Print “Line 7 – Value of c is “, c
+
+Output :
+Line 1 – Value of c is 31
+Line 2 – Value of c is 11
+Line 3 – Value of c is 210
+Line 4 – Value of c is 2
+Line 5 – Value of c is 1
+Line 6 – Value of c is 8
+Line 7 – Value of c is 2
