@@ -1,0 +1,36 @@
+#Print the prime numbers up to a specified 
+limit
+
+R=int(input(“Enter upper limit: “))
+For a in range(2,r+1):
+    K=0
+    For I in range(2,a//2+1):
+        If(a%i==0):
+            K=k+1
+    If(k<=0):
+        Print(a)
+
+Output :
+Case 1:
+Enter upper limit: 15
+2
+3
+5
+7
+11
+13
+
+Case 2:
+Enter upper limit: 40
+2
+3
+5
+7
+11
+13
+17
+19
+23
+29
+31
+37
