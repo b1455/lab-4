@@ -1,0 +1,80 @@
+#Print twin primes up to a specified number
+# Python program to illustrate… 
+# To print total number of twin prime 
+# using Sieve of Eratosthenes 
+
+
+
+Def printTwinPrime(n): 
+
+
+
+    # Create a boolean array “prime[0..n]”  
+
+    # and initialize all entries it as  
+
+    # true. A value in prime[i] will 
+
+    # finally be false if I is Not a prime,  
+
+    # else true. 
+
+    Prime = [True for I in range(n + 2)] 
+
+    P = 2
+
+
+
+    While (p * p <= n + 1): 
+
+
+
+        # If prime[p] is not changed,  
+
+        # then it is a prime 
+
+        If (prime[p] == True): 
+
+
+
+            # Update all multiples of p 
+
+            For I in range(p * 2, n + 2, p): 
+
+                Prime[i] = False
+
+        P += 1
+
+
+
+    # check twin prime numbers 
+
+    # display the twin prime numbers 
+
+    For p in range(2, n-1): 
+
+        If prime[p] and prime[p + 2]: 
+
+            Print(“(“,p,”,”, (p + 2), “)” ,end=’’) 
+
+
+
+
+# driver program 
+
+If __name__==’__main__’: 
+
+
+
+    # static input 
+
+    N = 25
+
+
+
+    # Calling the function 
+
+printTwinPrime(n) 
+
+Output:
+(3, 5)(5, 7)(11, 13)(17, 19)
