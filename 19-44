@@ -1,0 +1,105 @@
+
+# Python3 program to find the largest and 
+# second largest element in a Linked List 
+# Node class  
+class Node:  
+      
+    # Function to initialize the node object  
+    def __init__(self, data):  
+          
+        # Assign data  
+        self.data = data  
+          
+        # Initialize  
+        # next as null 
+        self.next = None 
+      
+# Linked List Class 
+class LinkedList: 
+  
+    # Function to initialize the 
+    # LinkedList class. 
+    def __init__(self):  
+          
+        # Initialize head as None  
+        self.head = None 
+  
+    # This function insert a new node at the  
+    # beginning of the linked list  
+    def push(self, new_data):  
+      
+        # Create a new Node  
+        new_node = Node(new_data)  
+  
+        # Make next of new Node as head  
+        new_node.next = self.head  
+  
+        # Move the head to point to new Node  
+        self.head = new_node 
+  
+    # Function to find the max and 
+    # second largest value from the list 
+    def findLargestAndSecondLargest(self): 
+  
+        # Take a Head to iterate list 
+        Head = self.head 
+  
+        # Initialize max and second_max 
+        # using first two nodes of the list 
+        val1 = Head.data 
+        val2 = Head.next.data 
+        Max = max(val1, val2) 
+        second_max = min(val1, val2) 
+  
+        # Move the Head to third node 
+        Head = Head.next.next
+  
+        # Iterate over rest of linked list 
+        while(Head != None): 
+  
+            # If current node value is  
+            # greater then Max then 
+            if(Head.data > Max): 
+  
+                # Set the current max to second_max 
+                # and current node value to max 
+                second_max = Max
+                Max = Head.data 
+  
+            # Else if current node value is 
+            # greater then second_max value 
+            elif(Head.data > second_max): 
+  
+                # Then current node value 
+                # to second_max 
+                second_max = Head.data 
+  
+            # Move the head to next node 
+            Head = Head.next
+  
+        # Print the largest and second largest values 
+        print("Largest = ", Max) 
+        print("Second Largest = ", second_max) 
+  
+# Driver code 
+if __name__ == '__main__': 
+  
+    # Initialising the linked list 
+    head = LinkedList() 
+  
+    # Pushing the values in list 
+    head.push(20) 
+    head.push(5) 
+    head.push(15) 
+    head.push(10) 
+    head.push(7) 
+    head.push(6) 
+    head.push(11) 
+    head.push(9) 
+      
+    # Calling the function to print 
+    # largest and second largest values. 
+    head.findLargestAndSecondLargest() 
+    Output: 
+Largest = 20
+Second Largest = 15
