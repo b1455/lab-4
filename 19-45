@@ -1,0 +1,283 @@
+#1.Create a linked list
+class Node:
+    def _init_(self, dataval=None):
+        self.dataval = dataval
+        self.nextval = None
+
+class SLinkedList:
+    def _init_(self):
+        self.headval = None
+
+list1 = SLinkedList()
+list1.headval = Node("Mon")
+e2 = Node("Tue")
+e3 = Node("Wed")
+list1.headval.nextval = e2
+
+e2.nextval = e3
+
+#2.Insert new element to the linked list
+class Node: 
+  
+    def _init_(self, data): 
+        self.data = data 
+        self.next = None   
+   
+class LinkedList: 
+    
+    def _init_(self):  
+        self.head = None
+        
+#3.Search for an element in the linked list
+class Node: 
+      
+    def _init_(self, data): 
+        self.data = data 
+        self.next = None 
+   
+class LinkedList: 
+    def _init_(self): 
+        self.head = None  
+  
+    def push(self, new_data): 
+      
+        new_node = Node(new_data) 
+  
+        new_node.next = self.head 
+  
+        self.head = new_node 
+  
+    def search(self, x): 
+  
+        current = self.head 
+   
+        while current != None: 
+            if current.data == x: 
+                return True 
+              
+            current = current.next
+          
+        return False  
+  
+   
+if _name_ == '_main_': 
+  
+    llist = LinkedList() 
+  
+    ''' Use push() to construct below list 
+        14->21->11->30->10 '''
+    llist.push(10); 
+    llist.push(30); 
+    llist.push(11); 
+    llist.push(21); 
+    llist.push(14); 
+  
+    if llist.search(21): 
+        print("Yes") 
+    else: 
+        print("No") 
+        
+#4.Sort the elements of the linked list
+class Node:  
+    def _init_(self,data):  
+        self.data = data;  
+        self.next = None;  
+          
+class SortList:    
+    def _init_(self):  
+        self.head = None;  
+        self.tail = None;  
+         
+    def addNode(self, data):    
+        newNode = Node(data);  
+          
+        #Checks if the list is empty  
+        if(self.head == None):  
+            self.head = newNode;  
+            self.tail = newNode;  
+        else:   
+            self.tail.next = newNode;   
+            self.tail = newNode;  
+                
+    def sortList(self):    
+        current = self.head;  
+        index = None;  
+          
+        if(self.head == None):  
+            return;  
+        else:  
+            while(current != None):   
+                index = current.next;  
+                  
+                while(index != None):    
+                    if(current.data > index.data):  
+                        temp = current.data;  
+                        current.data = index.data;  
+                        index.data = temp;  
+                    index = index.next;  
+                current = current.next;  
+                    
+    def display(self):    
+        current = self.head;  
+        if(self.head == None):  
+            print("List is empty");  
+            return;  
+        while(current != None):   
+            print(current.data),  
+            current = current.next;  
+        print ""  
+   
+sList = SortList();  
+          
+sList.addNode(9);  
+sList.addNode(7);  
+sList.addNode(2);  
+sList.addNode(5);  
+sList.addNode(4);  
+    
+print("Original list: ");  
+sList.display();  
+    
+sList.sortList();  
+   
+print("Sorted list: ");  
+sList.display();  
+
+#5.Reverse thge linked list
+class Node: 
+   
+    def _init_(self, data): 
+        self.data = data 
+        self.next = None
+  
+class LinkedList: 
+  
+    def _init_(self): 
+        self.head = None
+  
+    def reverse(self): 
+        prev = None
+        current = self.head 
+        while(current is not None): 
+            next = current.next
+            current.next = prev 
+            prev = current 
+            current = next
+        self.head = prev 
+          
+    def push(self, new_data): 
+        new_node = Node(new_data) 
+        new_node.next = self.head 
+        self.head = new_node 
+  
+    def printList(self): 
+        temp = self.head 
+        while(temp): 
+            print temp.data, 
+            temp = temp.next
+  
+   
+llist = LinkedList() 
+llist.push(20) 
+llist.push(4) 
+llist.push(15) 
+llist.push(85) 
+  
+print "Given Linked List"
+llist.printList() 
+llist.reverse() 
+print "\nReversed Linked List"
+llist.printList() 
+
+#6.Delete from a linked list
+class Node: 
+ 
+    def _init_(self, data): 
+        self.data = data 
+        self.next = None
+ 
+class LinkedList: 
+ 
+    def _init_(self): 
+        self.head = None
+  
+    def push(self, new_data): 
+        new_node = Node(new_data) 
+        new_node.next = self.head 
+        self.head = new_node 
+  
+    def deleteNode(self, key): 
+        
+        temp = self.head 
+ 
+        if (temp is not None): 
+            if (temp.data == key): 
+                self.head = temp.next
+                temp = None
+                return
+ 
+        while(temp is not None): 
+            if temp.data == key: 
+                break
+            prev = temp 
+            temp = temp.next
+ 
+        if(temp == None): 
+            return
+  
+        prev.next = temp.next
+ 
+        temp = None
+ 
+ 
+    def printList(self): 
+        temp = self.head 
+        while(temp): 
+            print (" %d" %(temp.data)), 
+            temp = temp.next
+ 
+ 
+llist = LinkedList() 
+llist.push(7) 
+llist.push(1) 
+llist.push(3) 
+llist.push(2) 
+ 
+print ("Created Linked List: ")
+llist.printList() 
+llist.deleteNode(1) 
+print ("\nLinked List after Deletion of 1:")
+llist.printList() 
+
+#7.Dislay linked list
+class Node:
+    def _init_(self, data):
+       self.data = data
+       self.next = None
+ 
+class LinkedList:
+    def _init_(self):
+        self.head = None
+        self.last_node = None
+ 
+    def append(self, data):
+        if self.last_node is None:
+            self.head = Node(data)
+            self.last_node = self.head
+        else:
+            self.last_node.next = Node(data)
+            self.last_node = self.last_node.next
+ 
+    def display(self):
+        current = self.head
+        while current is not None:
+            print(current.data, end = ' ')
+            current = current.next
+ 
+a_llist = LinkedList()
+n = int(input('How many elements would you like to add? '))
+for i in range(n):
+    data = int(input('Enter data item: '))
+    a_llist.append(data)
+print('The linked list: ', end = '')
+a_llist.display()
